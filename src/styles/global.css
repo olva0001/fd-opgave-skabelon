@@ -23,5 +23,6 @@
 
 body {
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: auto 1fr auto;
+  grid-template-columns: [full-start] 1fr [content] minmax(0, 65vw) 1fr [full-end];
 }

@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import "../styles/overrides.css";
 ---
 
 <header>
@@ -21,17 +22,19 @@ import "../styles/global.css";
 
 <style>
   header {
-    grid-column: 2;
-    grid-row: 1;
+    grid-column: full-start / full-end;
+    background-color: #1b1b1b;
+    display: grid;
+    grid: auto / subgrid;
+    color: white;
+    padding: 1rem 0;
   }
 
   .header {
+    grid-column: content;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1b1b1b;
-    color: white;
-    padding: 1rem;
   }
 
   .header_title {
@@ -51,7 +54,7 @@ import "../styles/global.css";
     background-color: #ffcc4a;
     border-radius: 20px;
     text-align: center;
-    padding: 0.5rem 0.75rem;
+    padding: 0.25rem 0.75rem;
     color: black;
   }
 </style>
