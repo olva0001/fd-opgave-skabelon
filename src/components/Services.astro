@@ -1,18 +1,71 @@
----
-//@ts-nocheck
-const servicesData = await fetch(
-  "https://frontend-design-theme.netlify.app/api/services"
-).then((response) => response.json());
----
+<div class="services">
+  <div class="services_block">
+    <h3>Finance and Restructuring</h3>
+    <p>
+      Unlock financial clarity and implement effective restructuring strategies
+      to optimize your business operations
+    </p>
+    <button>Our services</button>
+  </div>
+  <div class="services_block">
+    <h3>Our Approach</h3>
+    <p>
+      Explore our proven methods for achieving growth and building resilience
+      through costumized solutions
+    </p>
+    <button>More About</button>
+  </div>
+  <div class="services_block">
+    <h3>Consultalk Result</h3>
+    <p>
+      Experience actionable insights and measurable results through expert
+      consultation and tailored guidance
+    </p>
+    <button>Explore Our Solution</button>
+  </div>
+</div>
 
-<ul>
-  {
-    servicesData.services.map((service) => (
-      <li>
-        <h2>{service.title}</h2>
-        <p>{service.description}</p>
-        <a href="#0">{service.buttonText}</a>
-      </li>
-    ))
+<style>
+  .services {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
   }
-</ul>
+  .services_block {
+    background: rgba(34, 34, 34, 0.95);
+    border: 1px solid gray;
+    color: white;
+    padding: 1.5rem 2.5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  h3 {
+    font-size: var(--step-0);
+  }
+
+  p {
+    font-size: var(--step--2);
+    margin-bottom: 2rem;
+  }
+
+  button {
+    font-size: var(--step--1);
+    color: white;
+    background-color: #181818;
+    border-radius: 40px;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 1rem;
+    width: fit-content;
+  }
+
+  button:hover {
+    color: black;
+    background-color: white;
+  }
+</style>
