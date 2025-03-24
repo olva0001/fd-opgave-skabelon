@@ -3,8 +3,16 @@ import Services from "./Services.astro";
 ---
 
 <section class="hero">
-  <!-- Markup her -->
-
+  <div class="hero_left">
+    <h1>Empowering Your Business Growth</h1>
+    <p>
+      Discover tailored strategies and expert insights to take your business to
+      the next level. Let us help you navigate challenges and achieve
+      sustainable success.
+    </p>
+    <button>Book a Meeting</button>
+  </div>
+  <div class="hero_right"></div>
   <Services />
 </section>
 
@@ -12,5 +20,23 @@ import Services from "./Services.astro";
   .hero {
     grid-column: 2;
     grid-row: 2;
+    background-color: rgba(24, 24, 24, 1);
+  }
+
+  .hero_left {
+    color: white;
+  }
+
+  button {
+    width: fit-content;
+    background-color: white;
+    color: black;
+    border-radius: 40px;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 1rem;
+    width: fit-content;
   }
 </style>
