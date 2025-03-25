@@ -23,5 +23,7 @@
 
 body {
   display: grid;
-  grid-template-columns: [full-start] 1fr [content] minmax(0, 65vw) 1fr [full-end];
+  grid-template-columns:
+    minmax(20px, 1fr) [content-start] minmax(0, 500px) [middle] minmax(0, 500px)
+    [content-end] minmax(20px, 1fr);
 }
