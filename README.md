@@ -17,3 +17,7 @@ const employeesData = await fetch(
 
 console.log(employeesData);
 ```
+
+## Herunder deler jeg mine egne tanker under opgave forløbet:
+
+Hero: Hero delen af hjemmesiden var enormt frustrerende for mig. Jeg brugte rigtig lang tid på at finde ud af hvordan grid skulle sættes op, og jeg havde ligeledes frustrationer med at få billederne til at vise sig - hvilket skyldes forkert mappe struktur. Så lærte jeg det...

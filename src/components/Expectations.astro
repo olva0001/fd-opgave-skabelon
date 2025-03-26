@@ -1,0 +1,116 @@
+---
+import Checkmark from "../icons/checkmark.svg";
+---
+
+<section>
+  <figure>
+    <img class="pattern" src="../src/img/Pattern.png" alt="" />
+    <img
+      class="expectations_img"
+      src="../src/img/expectations_photo.jpg"
+      alt="image of guy explaining"
+    />
+  </figure>
+  <div class="text">
+    <h5>WE'LL WORK WITH YOU</h5>
+    <h1>What To Expect</h1>
+    <p>
+      Our collaboration is built on transparency, efficiency, and measurable
+      results. Together, we create strategies tailored to your unique needs and
+      goals.
+    </p>
+    <div class="checkmark">
+      <div>
+        <Checkmark class="check" />
+        <p>
+          Collaborate to build actionable strategies that drive sustainable
+          growth and deliver tangible outcomes.
+        </p>
+      </div>
+      <div>
+        <Checkmark class="check" />
+        <p>
+          Identify opportunities to optimize processes and implement impactful
+          solutions with measurable results.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-column: content;
+    grid-template-columns: subgrid;
+    gap: 2rem;
+    height: 30svh;
+    margin-top: 5rem;
+
+    figure {
+      position: relative;
+      height:;
+      .pattern {
+        position: absolute;
+        top: 0;
+        left: -20%;
+        z-index: -1;
+      }
+      &::before {
+        content: "";
+        background: #4eaf4e;
+        width: 164px;
+        height: 183px;
+        position: absolute;
+        top: 23%;
+        left: -5%;
+        z-index: 0;
+        border-radius: 1rem;
+      }
+      .expectations_img {
+        position: absolute;
+        top: 30%;
+        z-index: 0;
+        height: 100%;
+        object-fit: cover;
+        object-position: 0% 30%;
+        border-radius: 1rem;
+      }
+    }
+    .text {
+      h5 {
+        background-color: #ffcc4a;
+        width: fit-content;
+        padding: 0.1rem 1rem;
+        border-radius: 40px;
+      }
+
+      > *:not(:first-child) {
+        margin-top: 20px;
+      }
+
+      h1 {
+        font-size: var(--step-3);
+        font-weight: bold;
+      }
+
+      .checkmark {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .checkmark div {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: start;
+      }
+
+      .check {
+        color: #4eaf4e;
+        width: 30px;
+        margin-top: 5px;
+      }
+    }
+  }
+</style>
