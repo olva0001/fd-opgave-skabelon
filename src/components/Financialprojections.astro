@@ -1,0 +1,149 @@
+---
+import ArrowRight from "../icons/arrow--right.svg";
+import ArrowLeft from "../icons/arrow-left.svg";
+
+const findData = await fetch(
+  "https://frontend-design-theme.netlify.app/api/financialProjections"
+).then((response) => response.json());
+---
+
+<section>
+  <div>
+    <h1>{findData.title}</h1>
+    <p>
+      {findData.subtitle}
+    </p>
+  </div>
+  <div>
+    <div class="container-arrow-left">
+      <ArrowLeft class="arrow-left" />
+    </div>
+    <div class="container-arrow-right">
+      <ArrowRight class="arrow-right" />
+    </div>
+  </div>
+
+  <ul class="full-width">
+    {
+      findData.values.map(async (findData) => {
+        const Icon = await import(`../icons/${findData.icon}.svg`).then(
+          (module) => module.default
+        );
+
+        return (
+          <li>
+            <Icon class="icon" />
+            <h2>{findData.title}</h2>
+            <p>{findData.description}</p>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+    margin: 20% 0 0 0;
+    background-color: #f5f5f5;
+    padding: 7% 0 7% 0;
+
+    div {
+      display: grid;
+    }
+
+    > :first-child {
+      grid-column: 2 / middle;
+    }
+
+    > :nth-child(2) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    div:last-child {
+      display: flex;
+      justify-content: center;
+    }
+
+    div:first-child *:not(:first-child) {
+      margin-top: 20px;
+      color: rgba(89, 85, 102, 1);
+    }
+
+    h1 {
+      font-size: var(--step-2);
+      font-weight: bold;
+    }
+
+    .arrow-left,
+    .arrow-right {
+      padding: 1rem;
+      box-sizing: content-box;
+      cursor: pointer;
+    }
+
+    .container-arrow-left {
+      background-color: rgba(24, 24, 24, 1);
+      border-radius: 100%;
+      margin-right: 10px;
+      width: fit-content;
+    }
+    .container-arrow-right {
+      background-color: rgba(255, 195, 43, 1);
+      border-radius: 100%;
+      margin-left: 10px;
+      width: fit-content;
+    }
+
+    .arrow-left {
+      filter: invert(1);
+    }
+  }
+
+  ul.full-width {
+    margin-top: 5%;
+    list-style: none;
+
+    grid-column: 1/-1;
+    scroll-snap-type: inline mandatory;
+
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+
+    padding-inline: max(20px, 50% - 50rem / 2);
+    scroll-padding-inline-start: max(20px, 50% - 50rem / 2);
+
+    li {
+      flex-basis: min(90%, 400px);
+      flex-shrink: 0;
+
+      padding: 2rem;
+      border-radius: 20px;
+      background-color: rgba(235, 235, 235, 1);
+    }
+
+    li *:not(:first-child) {
+      margin-top: 20px;
+    }
+
+    li *:nth-child(2) {
+      font-size: var(--step-2);
+      font-weight: 500;
+    }
+
+    li:nth-child(2) {
+      background-color: rgba(24, 24, 24, 1);
+      color: white;
+
+      .icon {
+        color: rgba(255, 204, 74, 1);
+      }
+    }
+  }
+</style>
