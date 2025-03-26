@@ -1,0 +1,71 @@
+---
+const { data } = Astro.props;
+const { label } = Astro.props;
+---
+
+<div class="stats">
+  <div class="stat-container">
+    <div class="stat" style={`--percent: ${data.value}`}></div>
+    <p class="label">{label}</p>
+  </div>
+</div>
+
+<style>
+  .stats {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .stat {
+    --p: calc(var(--percent) * 1%);
+    --border-width: 6px;
+    --border-color: white;
+
+    aspect-ratio: 1;
+    width: 150px;
+    border-radius: calc(Infinity * 1px);
+    border: var(--border-width) solid #0000;
+    background:
+      radial-gradient(
+          circle at 50% calc(var(--border-width) / 2),
+          var(--border-color) calc(var(--border-width) / 2),
+          transparent 0
+        )
+        border-box,
+      linear-gradient(#fbc336, #fbc336) padding-box,
+      conic-gradient(var(--border-color) var(--p), rgba(218, 174, 60, 1) 0)
+        border-box;
+
+    display: grid;
+    counter-reset: count var(--percent);
+
+    &::before,
+    &::after {
+      grid-area: 1 / 1;
+    }
+
+    &::after {
+      content: counter(count) "%";
+      place-self: center;
+      font-size: var(--step-3);
+      font-weight: bold;
+    }
+
+    &::before {
+      content: "";
+      aspect-ratio: 1;
+      border-radius: calc(Infinity * 1px);
+      width: calc(var(--border-width) * 3);
+      background: #000;
+      border: 3px solid white;
+      offset-path: border-box;
+      offset-distance: var(--p);
+      offset-anchor: 50% calc(50% - var(--border-width) / 2);
+    }
+  }
+  .label {
+    font-size: var(--step-0);
+    font-weight: 600;
+    text-align: center;
+  }
+</style>

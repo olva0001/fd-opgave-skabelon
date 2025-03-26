@@ -1,0 +1,58 @@
+---
+import Experiencecircles from "./Experiencecircles.astro";
+
+const expData = await fetch(
+  "https://frontend-design-theme.netlify.app/api/experience"
+).then((response) => response.json());
+console.log(expData);
+---
+
+<section>
+  <div class="container">
+    <div class="info">
+      <p>Experience</p>
+      <h1>{expData.heading}</h1>
+      <p>{expData.subheading}</p>
+    </div>
+    {
+      expData.stats.map((stat) => (
+        <Experiencecircles key={stat.label} data={stat} label={stat.label} />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: rgba(251, 195, 54, 1);
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: content;
+    grid-column: 1 / -1;
+    padding: 7% 0 7% 0;
+
+    .container {
+      grid-column: content;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .container div:first-child > *:not(:first-child) {
+      margin-top: 20px;
+    }
+
+    .info *:first-child {
+      background-color: white;
+      width: fit-content;
+      padding: 0rem 0.5rem;
+      border-radius: 20px;
+    }
+
+    h1 {
+      font-size: var(--step-3);
+      font-weight: bold;
+      width: 90%;
+    }
+  }
+</style>
