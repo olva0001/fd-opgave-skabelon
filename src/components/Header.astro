@@ -6,13 +6,13 @@ import "../styles/overrides.css";
 <header>
   <section class="header">
     <div class="header_title">
-      <p>AskExperts</p>
+      <a href="/">AskExperts</a>
     </div>
     <div class="navigation">
-      <a>Home</a>
-      <a>Case Study</a>
-      <a>Team</a>
-      <a>About</a>
+      <a href="/">Home</a>
+      <a href="/casestudy">Case Study</a>
+      <a href="/team">Team</a>
+      <a href="/about">About</a>
     </div>
     <div class="header_button">
       <button>Login</button>
@@ -61,5 +61,10 @@ import "../styles/overrides.css";
 
   .header_button:hover {
     background-color: #ffd774;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 </style>
