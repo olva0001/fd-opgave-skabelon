@@ -1,0 +1,100 @@
+---
+
+---
+
+<article class="newsletter-container">
+  <div class="newsletter-text">
+    <header>
+      <h2>Subscribe Our Newsletter</h2>
+      <span
+        >Build Stronger Customer Relationships with <strong>Consultalk</strong
+        ></span
+      >
+    </header>
+  </div>
+  <div class="newsletter-form">
+    <form>
+      <input placeholder="your mail address" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <figure class="bg-pattern">
+    <img src="../src/img/Pattern.png" alt="Pattern background" />
+  </figure>
+</article>
+
+<style>
+  .newsletter-container {
+    display: flex;
+    grid-column: content;
+    background: #181818;
+    padding: 3.5rem;
+    align-items: center;
+    border-radius: 1rem;
+    margin-block: 7%;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .newsletter-text header {
+    color: #fff;
+  }
+
+  .newsletter-text h2 {
+    font-size: var(--step-2);
+    line-height: 3rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .newsletter-text span {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .newsletter-form form {
+    display: flex;
+    align-items: center;
+  }
+
+  .newsletter-form input {
+    padding: 1rem 2rem;
+    background: #fff;
+    border: none;
+    border-radius: 2rem;
+  }
+
+  .newsletter-form button {
+    background: #ffcc4a;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 20px;
+    color: #000;
+    margin-left: 1rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+  }
+
+  .bg-pattern img {
+    position: absolute;
+    transform: scale(0.75) rotate(45deg);
+    top: -75%;
+    right: -10%;
+    z-index: 1;
+  }
+
+  .newsletter-container::before {
+    content: "";
+    background-color: #4eaf4e;
+    width: 164px;
+    height: 183px;
+    border-radius: 1rem;
+    position: absolute;
+    top: 70%;
+    right: -3%;
+    transform: rotate(45deg);
+    z-index: 2;
+  }
+</style>
