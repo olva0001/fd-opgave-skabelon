@@ -15,10 +15,26 @@ import "../styles/overrides.css";
       <a href="/about">About</a>
     </div>
     <div class="header_button">
-      <button>Login</button>
+      <button id="loginBtn">Login</button>
     </div>
   </section>
 </header>
+
+<!-- Popover modal -->
+<div id="popoverOverlay" class="popover-overlay hidden">
+  <div class="popover-box">
+    <h2>Dashboard Login</h2>
+    <form>
+      <label>
+        Email Address <input type="text" name="username" />
+      </label><br /><br />
+      <label>
+        Password <input type="password" name="password" />
+      </label><br /><br />
+      <button class="form-login" type="submit">Go to dashboard</button>
+    </form>
+  </div>
+</div>
 
 <style>
   header {
@@ -67,4 +83,93 @@ import "../styles/overrides.css";
     text-decoration: none;
     color: inherit;
   }
+
+  .popover-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .popover-box {
+    background: rgba(24, 24, 24, 1);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+
+  .popover-box input[type="text"],
+  .popover-box input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 1rem;
+  }
+
+  .popover-box form {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .form-login {
+    background-color: #ffcc4a;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    color: black;
+    font-size: var(--step--1);
+    cursor: pointer;
+    margin-top: 0.5rem;
+    align-self: center;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+    font-size: var(--step-2);
+    text-align: center;
+  }
+
+  .hidden {
+    display: none;
+  }
 </style>
+
+<script>
+  const loginBtn = document.getElementById("loginBtn");
+  const popoverOverlay = document.getElementById("popoverOverlay");
+
+  loginBtn.addEventListener("click", () => {
+    popoverOverlay.classList.remove("hidden");
+  });
+
+  popoverOverlay.addEventListener("click", (e) => {
+    if (e.target === popoverOverlay) {
+    }
+  });
+
+  document
+    .querySelector('form button[type="submit"]')
+    .addEventListener("click", (e) => {
+      e.preventDefault();
+      popoverOverlay.classList.add("hidden");
+    });
+</script>
