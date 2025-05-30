@@ -1,0 +1,181 @@
+---
+
+---
+
+<section>
+  <div class="titles">
+    <h2>FAQ</h2>
+    <h1>Costumer Questions</h1>
+  </div>
+  <div class="questions">
+    <button class="accordion"
+      >What will happen when i've set my application?</button
+    >
+    <div class="panel">
+      <p>
+        Ippsum is the result of synergy between our teams and our customers. Our
+        company culture is focused on excellent productivity, customer
+        satisfaction, respect for team and individual achievements.
+      </p>
+    </div>
+    <hr />
+
+    <button class="accordion">Can I get a free trial before I purchase?</button>
+    <div class="panel">
+      <p>
+        Ippsum is the result of synergy between our teams and our customers. Our
+        company culture is focused on excellent productivity, customer
+        satisfaction, respect for team and individual achievements.
+      </p>
+    </div>
+    <hr />
+
+    <button class="accordion"
+      >What should I include in my personal statement?</button
+    >
+    <div class="panel">
+      <p>
+        Ippsum is the result of synergy between our teams and our customers. Our
+        company culture is focused on excellent productivity, customer
+        satisfaction, respect for team and individual achievements.
+      </p>
+    </div>
+    <hr />
+
+    <button class="accordion"
+      >Will membership plans be charged automatically?</button
+    >
+    <div class="panel">
+      <p>
+        Ippsum is the result of synergy between our teams and our customers. Our
+        company culture is focused on excellent productivity, customer
+        satisfaction, respect for team and individual achievements.
+      </p>
+    </div>
+    <hr />
+
+    <button class="accordion"
+      >What will happen when I've sent my application?</button
+    >
+    <div class="panel">
+      <p>
+        Ippsum is the result of synergy between our teams and our customers. Our
+        company culture is focused on excellent productivity, customer
+        satisfaction, respect for team and individual achievements.
+      </p>
+    </div>
+    <hr />
+
+    <button class="accordion">Can I get a free trial before I purchase?</button>
+    <div class="panel">
+      <p>
+        Ippsum is the result of synergy between our teams and our customers. Our
+        company culture is focused on excellent productivity, customer
+        satisfaction, respect for team and individual achievements.
+      </p>
+    </div>
+    <hr />
+  </div>
+</section>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+
+  for (var i = 0; i < acc.length; i++) {
+    var iconSpan = document.createElement("span");
+    iconSpan.classList.add("icon");
+    iconSpan.style.float = "right";
+    iconSpan.textContent = "+";
+    acc[i].appendChild(iconSpan);
+
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+
+      var panel = this.nextElementSibling;
+      var icon = this.querySelector(".icon");
+
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+        icon.textContent = "+";
+      } else {
+        panel.style.display = "block";
+        icon.textContent = "-";
+      }
+    });
+  }
+</script>
+
+<style>
+  section {
+    display: grid;
+    grid-column: content;
+    background-color: rgba(245, 245, 245, 1);
+    width: screen;
+    height: 800px;
+    border-radius: 45px;
+  }
+
+  .titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -5%;
+  }
+
+  h1 {
+    font-size: var(--step-3);
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    background-color: rgba(78, 175, 78, 1);
+    width: fit-content;
+    padding: 0.25rem 1.5rem;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .questions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .questions hr {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .accordion {
+    cursor: pointer;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+
+  .panel {
+    display: none;
+    overflow: hidden;
+    padding-bottom: 20px;
+  }
+
+  p {
+    font-size: var(--step--1);
+    color: rgba(89, 85, 102, 1);
+    margin: 10px 0;
+  }
+</style>

@@ -1,0 +1,150 @@
+---
+import Checkmark from "../icons/checkmark.svg";
+---
+
+<section class="vision-wrapper">
+  <figure class="image-wrapper">
+    <img src="/src/img/Pattern.png" alt="Pattern background" class="pattern" />
+    <img
+      src="/src/img/peopleworking.jpg"
+      alt="people working"
+      class="people-workinggimg"
+    />
+  </figure>
+  <div class="content-block">
+    <h5 class="section-label">OUR VISION</h5>
+    <h1 class="headline">Turn your ideas into reality.</h1>
+    <p class="intro-text">
+      Capitalize on low hanging fruit to identify a ballpark value added
+      activity beta test. Override the digital divide with additional from
+      DevOps.
+    </p>
+    <div class="list">
+      <div class="list-item">
+        <Checkmark class="icon" />
+        <p>
+          Bring to the table win-win survival strategies to ensure proactive
+          domination. At the end of the day.
+        </p>
+      </div>
+      <div class="list-item">
+        <Checkmark class="icon" />
+        <p>
+          Capitalize on low hanging fruit to identify a ballpark value added
+          activity to beta test override the digital.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<article class="stats-wrapper">
+  <div class="stat">
+    <h1>1128+</h1>
+    <p>Successful Work</p>
+  </div>
+  <div class="stat">
+    <h1>908+</h1>
+    <p>Team Members</p>
+  </div>
+  <div class="stat">
+    <h1>258+</h1>
+    <p>Happy Customers</p>
+  </div>
+  <div class="stat">
+    <h1>564+</h1>
+    <p>Creative Ideas</p>
+  </div>
+</article>
+
+<style>
+  @layer components {
+    .vision-wrapper {
+      display: grid;
+      grid-column: content;
+      grid-template-columns: subgrid;
+      gap: 2rem;
+      margin-bottom: 24%;
+      height: 30svh;
+    }
+    .image-wrapper {
+      grid-column: 2;
+      position: relative;
+      display: grid;
+      height: 10svh;
+    }
+    .pattern {
+      position: absolute;
+      top: 120%;
+      right: 5%;
+      z-index: -1;
+      width: 30%;
+    }
+    .image-wrapper::before {
+      content: "";
+      position: absolute;
+      top: 155%;
+      right: 12%;
+      width: 143px;
+      height: 124px;
+      background-color: #4eaf4e;
+      border-radius: 1rem;
+      z-index: 0;
+    }
+    .people-workinggimg {
+      position: absolute;
+      top: 185%;
+      right: 20%;
+      z-index: 0;
+      width: 80%;
+      height: 300px;
+      object-fit: cover;
+      object-position: 0% 30%;
+      border-radius: 1rem;
+    }
+    .content-block h5.section-label {
+      background-color: #4eaf4e;
+      color: white;
+      padding: 0 0.5rem;
+      border-radius: 20px;
+      width: fit-content;
+    }
+    .content-block > *:not(:first-child) {
+      margin-top: 20px;
+    }
+    .headline {
+      font-size: var(--step-3);
+      font-weight: 700;
+    }
+    .intro-text {
+      color: rgba(89, 85, 102, 1);
+    }
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      color: rgba(89, 85, 102, 1);
+    }
+    .icon {
+      color: #4eaf4e;
+      width: 30px;
+      margin-top: 5px;
+    }
+    .stats-wrapper {
+      display: flex;
+      justify-content: space-around;
+      padding: 0 3rem;
+      margin: 2% 0 10%;
+      grid-column: content;
+    }
+    .stat h1 {
+      font-size: var(--step-3);
+      font-weight: 700;
+    }
+  }
+</style>
